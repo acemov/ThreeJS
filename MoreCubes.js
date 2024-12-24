@@ -125,11 +125,117 @@ cube14.position.x = 2;
 cube14.position.y = 1;
 cube14.position.z = 0.5;
 
-
+let direction = 1;
+let direction1 = -1;
+let direction2 = -1;
+let direction3 = 1;
+let direction4 = -1;
+let direction5 = 1;
+let direction6 = 1;
+let direction7 = -1;
+let direction8 = 1;
+let direction9 = 1;
+let direction10 = -1;
+let direction11 = 1;
+let direction12 = 1;
+let direction13 = -1;
+let direction14 = 1;
 camera.position.z = 5;
 // - - - - - - - - - - - - - - MOSTRANDO EL CUBO - - - - - - - - - - - - - -
 function animate() {
+    cube.position.z += direction * 0.002;
+    cube1.position.z += direction1 * 0.002;
+    cube2.position.z += direction2 * 0.002;
+    cube3.position.z += direction3 * 0.002;
+    cube4.position.z += direction4 * 0.002;
+    cube5.position.z += direction5 * 0.002;
+    cube6.position.z += direction6 * 0.002;
+    cube7.position.z += direction7 * 0.002;
+    cube8.position.z += direction8 * 0.002;
+    cube9.position.z += direction9 * 0.002;
+    cube10.position.z += direction10 * 0.002;
+    cube11.position.z += direction11 * 0.002;
+    cube12.position.z += direction12 * 0.002;
+    cube13.position.z += direction13 * 0.002;
+    cube14.position.z += direction14 * 0.002;
     
+    if (cube.position.z >= 0.7) {
+        direction = -1; // Cambia la dirección a negativa
+    } else if (cube.position.z <= 0.2) {
+        direction = 1; // Cambia la dirección a positiva
+    }
+    if (cube1.position.z >= 0.7) {
+        direction1 = -1; // Cambia la dirección a negativa
+    } else if (cube1.position.z <= 0.2) {
+        direction1 = 1; // Cambia la dirección a positiva
+    }
+    if (cube2.position.z >= 0.7) {
+        direction2 = -1; // Cambia la dirección a negativa
+    } else if (cube2.position.z <= 0.2) {
+        direction2 = 1; // Cambia la dirección a positiva
+    }
+    if (cube3.position.z >= 0.7) {
+        direction3 = -1; // Cambia la dirección a negativa
+    } else if (cube3.position.z <= 0.2) {
+        direction3 = 1; // Cambia la dirección a positiva
+    }
+    if (cube4.position.z >= 0.7) {
+        direction4 = -1; // Cambia la dirección a negativa
+    } else if (cube4.position.z <= 0.2) {
+        direction4 = 1; // Cambia la dirección a positiva
+    }
+    if (cube5.position.z >= 0.7) {
+        direction5 = -1; // Cambia la dirección a negativa
+    } else if (cube5.position.z <= 0.2) {
+        direction5 = 1; // Cambia la dirección a positiva
+    }
+
+    if (cube6.position.z >= 0.7) {
+        direction6 = -1; // Cambia la dirección a negativa
+    } else if (cube6.position.z <= 0.2) {
+        direction6 = 1; // Cambia la dirección a positiva
+    }
+    if (cube7.position.z >= 0.7) {
+        direction7 = -1; // Cambia la dirección a negativa
+    } else if (cube7.position.z <= 0.2) {
+        direction7 = 1; // Cambia la dirección a positiva
+    }
+    if (cube8.position.z >= 0.7) {
+        direction8 = -1; // Cambia la dirección a negativa
+    } else if (cube8.position.z <= 0.2) {
+        direction8 = 1; // Cambia la dirección a positiva
+    }
+    if (cube9.position.z >= 0.7) {
+        direction9 = -1; // Cambia la dirección a negativa
+    } else if (cube9.position.z <= 0.2) {
+        direction9 = 1; // Cambia la dirección a positiva
+    }
+    if (cube10.position.z >= 0.7) {
+        direction10 = -1; // Cambia la dirección a negativa
+    } else if (cube10.position.z <= 0.2) {
+        direction10 = 1; // Cambia la dirección a positiva
+    }
+    if (cube11.position.z >= 0.7) {
+        direction11 = -1; // Cambia la dirección a negativa
+    } else if (cube11.position.z <= 0.2) {
+        direction11 = 1; // Cambia la dirección a positiva
+    }
+    if (cube12.position.z >= 0.7) {
+        direction12 = -1; // Cambia la dirección a negativa
+    } else if (cube12.position.z <= 0.2) {
+        direction12 = 1; // Cambia la dirección a positiva
+    }
+    if (cube13.position.z >= 0.7) {
+        direction13 = -1; // Cambia la dirección a negativa
+    } else if (cube13.position.z <= 0.2) {
+        direction13 = 1; // Cambia la dirección a positiva
+    }
+    if (cube14.position.z >= 0.7) {
+        direction14 = -1; // Cambia la dirección a negativa
+    } else if (cube14.position.z <= 0.2) {
+        direction14 = 1; // Cambia la dirección a positiva
+    }
+
 	renderer.render( scene, camera );
 }
 renderer.setAnimationLoop( animate );
