@@ -3,6 +3,7 @@ import * as THREE from 'three';
 // - - - - - - - - - - - - - - CREANDO ESCENA, CAMERA, Y EL MOTOR DE RENDERIZADO - - - - - - - - - - - - - -
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(95, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.z = 5;
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
@@ -20,7 +21,6 @@ const edgesMaterial = new THREE.LineBasicMaterial({ color: "lime" }); // Color d
 const edges = new THREE.LineSegments(edgesGeometry, edgesMaterial); // Combina geometría y material
 scene.add(edges);
 
-camera.position.z = 5;
 
 
 // - - - - - - - - - - - - - - MOSTRANDO EL CUBO - - - - - - - - - - - - - -

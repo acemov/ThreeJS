@@ -141,6 +141,16 @@ let direction12 = 1;
 let direction13 = -1;
 let direction14 = 1;
 camera.position.z = 5;
+
+const spotLight = new THREE.SpotLight(0xffffff, 50);
+spotLight.position.z = 5;
+spotLight.castShadow = true;
+spotLight.angle = Math.PI ;
+spotLight.penumbra = 0.5;
+spotLight.decay = 2;
+spotLight.distance = 10;
+scene.add(spotLight);
+
 // - - - - - - - - - - - - - - MOSTRANDO EL CUBO - - - - - - - - - - - - - -
 function animate() {
     cube.position.z += direction * 0.002;
