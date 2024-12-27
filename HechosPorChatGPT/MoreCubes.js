@@ -151,6 +151,9 @@ spotLight.decay = 2;
 spotLight.distance = 10;
 scene.add(spotLight);
 
+
+
+
 // - - - - - - - - - - - - - - MOSTRANDO EL CUBO - - - - - - - - - - - - - -
 function animate() {
     cube.position.z += direction * 0.002;
@@ -245,7 +248,6 @@ function animate() {
     } else if (cube14.position.z <= 0.2) {
         direction14 = 1; // Cambia la dirección a positiva
     }
-
 	renderer.render( scene, camera );
 }
 renderer.setAnimationLoop( animate );
