@@ -11,28 +11,32 @@ document.body.appendChild( renderer.domElement );
 
 // - - - - - - - - - - - - - - CREANDO EL CUBO - - - - - - - - - - - - - - 
 
-const geometry = new THREE.BoxGeometry( 1, 1, 5 );
-const material = new THREE.MeshBasicMaterial( { color: "red" } );
+const geometry = new THREE.BoxGeometry( 1, 1, 7 );
+const material = new THREE.MeshPhongMaterial( { color: "red",shininess: 100, reflectivity: 1 } );
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
+cube.receiveShadow = true
+cube.castShadow = true;
 
-const geometry1 = new THREE.BoxGeometry( 1, 1, 5 );
-const material1 = new THREE.MeshBasicMaterial( { color: "blue" } );
+const geometry1 = new THREE.BoxGeometry( 1, 1, 7 );
+const material1 = new THREE.MeshPhongMaterial( { color: "blue",shininess: 100, reflectivity: 1 } );
 const cube1 = new THREE.Mesh( geometry1, material1 );
 scene.add( cube1 );
+cube1.receiveShadow = true
+cube1.castShadow = true;
 cube1.position.x = 1;
-cube1.position.z = 0.5;
+cube1.position.z = 1;
 
-const geometry2 = new THREE.BoxGeometry( 1, 1, 5 );
-const material2 = new THREE.MeshBasicMaterial( { color: "green" } );
+const geometry2 = new THREE.BoxGeometry( 1, 1, 7 );
+const material2 = new THREE.MeshPhongMaterial( { color: "green",shininess: 100, reflectivity: 1 } );
 const cube2 = new THREE.Mesh( geometry2, material2 );
 scene.add( cube2 );
 cube2.position.x = -1;
-cube2.position.z = 0.2;
+cube2.position.z = 1;
+cube2.receiveShadow = true
+cube2.castShadow = true;
 
-let direction = 1;
-let direction1 = -1;
-let direction2 = 1;
+
 
 const spotLight = new THREE.SpotLight(0xffffff, 50);
 spotLight.position.z = 5;
@@ -46,8 +50,15 @@ scene.add(spotLight);
 
 camera.position.z = 5;
 
+const planoLuz = new THREE.BoxGeometry(10,10,0.1)
+const planoLuzMaterial = new THREE.MeshPhongMaterial( { color: "red",shininess: 100, reflectivity: 1})
+const ArmandoLuz = new THREE.Mesh(planoLuz,planoLuzMaterial)
+scene.add(ArmandoLuz)
+ArmandoLuz.position.z = 5
 
-
+let direction = 1;
+let direction1 = -1;
+let direction2 = -1;
 // - - - - - - - - - - - - - - MOSTRANDO EL CUBO - - - - - - - - - - - - - -
 function animate() {
     cube.position.z += direction * 0.002;
